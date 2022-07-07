@@ -18,21 +18,21 @@
   
     <meta name="description" content="今天才正式开始关于rCore-Tutorial的相关学习，以下是今天完成的内容 搭建运行环境安装WSL2（windows11）在管理员 PowerShell 或 Windows 命令提示符中输入此命令（默认安装ubuntu）： 1wsl --install  等待安装完成后重启，打开ubuntu，设置用户名和密码，再使用以下指令更新和升级包： 1sudo apt update &amp;&amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搭建运行环境">
-<meta property="og:url" content="http://example.com/2022/07/06/%E6%90%AD%E5%BB%BA%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/index.html">
+<meta property="og:title" content="Day 1">
+<meta property="og:url" content="http://example.com/2022/07/05/%E6%90%AD%E5%BB%BA%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/index.html">
 <meta property="og:site_name" content="Libertas Pages">
 <meta property="og:description" content="今天才正式开始关于rCore-Tutorial的相关学习，以下是今天完成的内容 搭建运行环境安装WSL2（windows11）在管理员 PowerShell 或 Windows 命令提示符中输入此命令（默认安装ubuntu）： 1wsl --install  等待安装完成后重启，打开ubuntu，设置用户名和密码，再使用以下指令更新和升级包： 1sudo apt update &amp;&amp;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/uTools_1657160862863.png">
-<meta property="article:published_time" content="2022-07-06T05:02:11.190Z">
-<meta property="article:modified_time" content="2022-07-07T03:14:16.899Z">
+<meta property="article:published_time" content="2022-07-05T05:49:05.000Z">
+<meta property="article:modified_time" content="2022-07-07T16:50:18.338Z">
 <meta property="article:author" content="Cox libertas">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/img/uTools_1657160862863.png">
   
   
   
-  <title>搭建运行环境 - Libertas Pages</title>
+  <title>Day 1 - Libertas Pages</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="搭建运行环境"></span>
+            <span id="subtitle" data-typed-text="Day 1"></span>
           
         </div>
 
@@ -223,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-07-06 13:02" pubdate>
-          2022年7月6日 下午
+        <time datetime="2022-07-05 13:49" pubdate>
+          2022年7月5日 下午
         </time>
       </span>
     
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          635 字
+          698 字
         
       </span>
     
@@ -304,7 +304,7 @@
         aria-expanded="true"
       >
         Rust学习记录
-        <span class="list-group-count">(1)</span>
+        <span class="list-group-count">(2)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -318,10 +318,19 @@
     
       
       
-        <a href="/2022/07/06/%E6%90%AD%E5%BB%BA%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/" title="搭建运行环境"
+        <a href="/2022/07/05/%E6%90%AD%E5%BB%BA%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/" title="Day 1"
            class="list-group-item list-group-item-action
            active">
-          <span class="category-post">搭建运行环境</span>
+          <span class="category-post">Day 1</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/07/06/my-first-blog/" title="Day 2"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Day 2</span>
         </a>
       
     
@@ -344,12 +353,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">搭建运行环境</h1>
+            <h1 style="display: none">Day 1</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年7月7日 上午
+                    本文最后更新于：2022年7月8日 凌晨
                   
                 
               </p>
@@ -372,7 +381,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://github.com/LearningOS/lab0-0-setup-env-run-os1-xxxxx.git<br></code></pre></td></tr></table></figure>
 
 <p>克隆时要个人访问令牌：在settings-&gt; Developer settings-&gt;Personal access tokens中新建一个人令牌，该令牌用作登录时的密码。</p>
-<p>克隆完成后进到文件目录下，使用vscode打开，输入以下命令：</p>
+<p>克隆完成后进到文件目录下（如果克隆速度太慢，可以使用cat &#x2F;etc&#x2F;resolv.conf来查看WSL的IP地址来设置相应的代理），使用vscode打开，输入以下命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo make codespaces_setenv<br></code></pre></td></tr></table></figure>
 
 <p>等待一系列安装完成后，cd到os1文件夹下，输入：</p>
@@ -418,8 +427,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>搭建运行环境</div>
-      <div>http://example.com/2022/07/06/搭建运行环境/</div>
+      <div>Day 1</div>
+      <div>http://example.com/2022/07/05/搭建运行环境/</div>
     </div>
     <div class="license-meta">
       
@@ -431,13 +440,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年7月6日</div>
+          <div>2022年7月5日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年7月7日</div>
+          <div>2022年7月8日</div>
         </div>
       
       <div class="license-meta-item">
@@ -478,9 +487,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/07/06/my-first-blog/" title="my-first-blog">
+                      <a href="/2022/07/06/my-first-blog/" title="Day 2">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">my-first-blog</span>
+                        <span class="hidden-mobile">Day 2</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     

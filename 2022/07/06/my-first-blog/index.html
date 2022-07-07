@@ -16,19 +16,24 @@
   <meta name="author" content="Cox libertas">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
-<meta property="og:title" content="my-first-blog">
+    <meta name="description" content="今天主要来学习Rust的基础，以及完成rustling的部分试题。 不可变引用，可变引用及所有权不可变引用实际上是对栈中对应内存地址的引用，多个不可变用的生命周期可以相互重叠，共同使用：  123456789101112131415161718&#x2F;&#x2F;打印变量地址fn main()&amp;#123;    let mut a:i32 &#x3D; 5;    let s&#x3D;&quot;asd&quot;;    let">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Day 2">
 <meta property="og:url" content="http://example.com/2022/07/06/my-first-blog/index.html">
 <meta property="og:site_name" content="Libertas Pages">
+<meta property="og:description" content="今天主要来学习Rust的基础，以及完成rustling的部分试题。 不可变引用，可变引用及所有权不可变引用实际上是对栈中对应内存地址的引用，多个不可变用的生命周期可以相互重叠，共同使用：  123456789101112131415161718&#x2F;&#x2F;打印变量地址fn main()&amp;#123;    let mut a:i32 &#x3D; 5;    let s&#x3D;&quot;asd&quot;;    let">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://rust-book.junmajinlong.com/ch6/1633412142190.png">
+<meta property="og:image" content="https://rust-book.junmajinlong.com/ch3/1608709804628.png">
 <meta property="article:published_time" content="2022-07-06T05:49:05.000Z">
-<meta property="article:modified_time" content="2022-07-06T05:49:05.976Z">
+<meta property="article:modified_time" content="2022-07-07T16:50:24.454Z">
 <meta property="article:author" content="Cox libertas">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://rust-book.junmajinlong.com/ch6/1633412142190.png">
   
   
   
-  <title>my-first-blog - Libertas Pages</title>
+  <title>Day 2 - Libertas Pages</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -208,7 +213,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="my-first-blog"></span>
+            <span id="subtitle" data-typed-text="Day 2"></span>
           
         </div>
 
@@ -231,7 +236,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 字
+          1k 字
         
       </span>
     
@@ -242,7 +247,7 @@
         
         
         
-          1 分钟
+          9 分钟
         
       </span>
     
@@ -280,6 +285,67 @@
   <div class="row nomargin-x">
     <div class="side-col d-none d-lg-block col-lg-2">
       
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
+    
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Rust学习记录"
+        id="heading-90598b2b11894a00c4bca1a8da729abf" role="tab" data-toggle="collapse" href="#collapse-90598b2b11894a00c4bca1a8da729abf"
+        aria-expanded="true"
+      >
+        Rust学习记录
+        <span class="list-group-count">(2)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-90598b2b11894a00c4bca1a8da729abf"
+           role="tabpanel" aria-labelledby="heading-90598b2b11894a00c4bca1a8da729abf">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2022/07/05/%E6%90%AD%E5%BB%BA%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/" title="Day 1"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Day 1</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/07/06/my-first-blog/" title="Day 2"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">Day 2</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+</div>
+
+
+  </aside>
+
 
     </div>
 
@@ -288,12 +354,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">my-first-blog</h1>
+            <h1 style="display: none">Day 2</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年7月6日 下午
+                    本文最后更新于：2022年7月8日 凌晨
                   
                 
               </p>
@@ -301,13 +367,51 @@
             
               <div class="markdown-body">
                 
-                
+                <p>今天主要来学习Rust的基础，以及完成rustling的部分试题。</p>
+<h2 id="不可变引用，可变引用及所有权"><a href="#不可变引用，可变引用及所有权" class="headerlink" title="不可变引用，可变引用及所有权"></a>不可变引用，可变引用及所有权</h2><p>不可变引用实际上是对栈中对应内存地址的引用，多个不可变用的生命周期可以相互重叠，共同使用：</p>
+<p><img src="https://rust-book.junmajinlong.com/ch6/1633412142190.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs rust"><span class="hljs-comment">//打印变量地址</span><br><span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>()&#123;<br>    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">a</span>:<span class="hljs-type">i32</span> = <span class="hljs-number">5</span>;<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">s</span>=<span class="hljs-string">&quot;asd&quot;</span>;<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">s1</span>=&amp;s;<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">s2</span>=&amp;s1;<br>    <span class="hljs-comment">//&amp;a先转成raw指针，然后再把指针转成usize，这个可以print的</span><br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">addr1</span> = &amp;a <span class="hljs-keyword">as</span> *<span class="hljs-keyword">const</span> <span class="hljs-type">i32</span> <span class="hljs-keyword">as</span> <span class="hljs-type">usize</span>;<br>    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;a addr：0x&#123;:X&#125;&quot;</span>,addr1);<br>    <span class="hljs-comment">//查看引用是否会指向同一地址</span><br>    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;s addr：0x&#123;:p&#125;&quot;</span>,s.<span class="hljs-title function_ invoke__">as_ptr</span>());<br>    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;s1 addr：0x&#123;:?&#125;&quot;</span>,s1.<span class="hljs-title function_ invoke__">as_ptr</span>());<br>    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;s2 addr：0x&#123;:p&#125;&quot;</span>,s2.<span class="hljs-title function_ invoke__">as_ptr</span>());<br>    <span class="hljs-comment">//为了验证刚才的地址是不是正确的，我们修改这个指针指向的数据</span><br>    a=a+<span class="hljs-number">2</span>;<br>    <span class="hljs-comment">//打印a，可以看到a已经变成100了</span><br>    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;value:&#123;&#125;\naddr：0x&#123;:X&#125;&quot;</span>,a,&amp;a <span class="hljs-keyword">as</span> *<span class="hljs-keyword">const</span> <span class="hljs-type">i32</span> <span class="hljs-keyword">as</span> <span class="hljs-type">usize</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>其输出结果为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">a addr：0x41D2AFF49C<br>s addr：0x0x7ff7e47ae458<br>s1 addr：0x0x7ff7e47ae458<br>s2 addr：0x0x7ff7e47ae458<br>value:7<br>addr：0x41D2AFF49C<br></code></pre></td></tr></table></figure>
+
+<p>可变引用则在同一生命周期中只能存在一个，防止数据的不一致性，并且可以通过该引用对所指向的数据进行修改，修改后的。</p>
+<p>而Rust所有权规则可以总结为如下几句话：</p>
+<ol>
+<li>Rust中的每个值都有一个被称为其所有者的变量(即：值的所有者是某个变量)</li>
+<li>值在任一时刻有且只有一个所有者</li>
+<li>当所有者(变量)离开作用域，这个值将被销毁</li>
+</ol>
+<h2 id="字符串String和字符串切片-amp-str"><a href="#字符串String和字符串切片-amp-str" class="headerlink" title="字符串String和字符串切片&amp;str"></a>字符串String和字符串切片&amp;str</h2><p><strong>Rust有两种字符串类型：str和String，其中str字符串是String类型字符串的切片(slice)类型</strong>。</p>
+<p><img src="https://rust-book.junmajinlong.com/ch3/1608709804628.png" srcset="/img/loading.gif" lazyload></p>
+
                 
               </div>
             
             <hr/>
             <div>
               <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Rust%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="category-chain-item">Rust学习记录</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
   
   
 </div>
@@ -318,7 +422,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>my-first-blog</div>
+      <div>Day 2</div>
       <div>http://example.com/2022/07/06/my-first-blog/</div>
     </div>
     <div class="license-meta">
@@ -337,7 +441,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年7月6日</div>
+          <div>2022年7月8日</div>
         </div>
       
       <div class="license-meta-item">
@@ -382,8 +486,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/07/06/%E6%90%AD%E5%BB%BA%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/" title="搭建运行环境">
-                        <span class="hidden-mobile">搭建运行环境</span>
+                      <a href="/2022/07/05/%E6%90%AD%E5%BB%BA%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/" title="Day 1">
+                        <span class="hidden-mobile">Day 1</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
