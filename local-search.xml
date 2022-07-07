@@ -17,27 +17,19 @@
   
   
   <entry>
-    <title>Hello World</title>
-    <link href="/2022/07/06/hello-world/"/>
-    <url>/2022/07/06/hello-world/</url>
+    <title>搭建运行环境</title>
+    <link href="/2022/07/06/%E6%90%AD%E5%BB%BA%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/"/>
+    <url>/2022/07/06/%E6%90%AD%E5%BB%BA%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/</url>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>今天才正式开始关于rCore-Tutorial的相关学习，以下是今天完成的内容</p><h2 id="搭建运行环境"><a href="#搭建运行环境" class="headerlink" title="搭建运行环境"></a>搭建运行环境</h2><h3 id="安装WSL2（windows11）"><a href="#安装WSL2（windows11）" class="headerlink" title="安装WSL2（windows11）"></a>安装WSL2（windows11）</h3><p>在管理员 PowerShell 或 Windows 命令提示符中输入此命令（默认安装ubuntu）：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">wsl --install<br></code></pre></td></tr></table></figure><p>等待安装完成后重启，打开ubuntu，设置用户名和密码，再使用以下指令更新和升级包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt update &amp;&amp; sudo apt upgrade<br></code></pre></td></tr></table></figure><p>等待更新的完成后，WSL就完成了配置。</p><h3 id="本地OS配置"><a href="#本地OS配置" class="headerlink" title="本地OS配置"></a>本地OS配置</h3><p>安装git</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">安装：sudo apt-get install git<br>配置用户名：git config --global user.name xxx<br>配置邮箱地址：git config --global user.name xxx<br>查看是否配置成功：git config --list<br></code></pre></td></tr></table></figure><p>克隆git仓库</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://github.com/LearningOS/lab0-0-setup-env-run-os1-xxxxx.git<br></code></pre></td></tr></table></figure><p>克隆时要个人访问令牌：在settings-&gt; Developer settings-&gt;Personal access tokens中新建一个人令牌，该令牌用作登录时的密码。</p><p>克隆完成后进到文件目录下，使用vscode打开，输入以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo make codespaces_setenv<br></code></pre></td></tr></table></figure><p>等待一系列安装完成后，cd到os1文件夹下，输入：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">make run LOG=TRACE<br></code></pre></td></tr></table></figure><p>当出现以下结果后，配置完成：</p><p><img src="/img/uTools_1657160862863.png"></p>]]></content>
     
     
     <categories>
       
-      <category>学习笔记</category>
-      
-      <category>随感</category>
+      <category>Rust学习记录</category>
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>标签1</tag>
-      
-    </tags>
     
   </entry>
   
